@@ -53,7 +53,7 @@ keys = [
         lazy.layout.next(),
         desc="Move window focus to other window"),
 
-    Key([mod], "r", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    Key([mod], "r", lazy.spawn("rofi -show"), desc="spawn rofi"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -104,6 +104,7 @@ keys = [
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "w", lazy.spawn("google-chrome-stable"), desc="Launch google chrome"),
+    Key([mod], "i", lazy.spawn("idea"), desc="Launch Intellij IDEA"),
     Key([mod, "shift", "control"], "h", lazy.layout.swap_column_left()),
     Key([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
     Key([mod, "shift"], "space", lazy.layout.flip()),
@@ -180,11 +181,10 @@ default_float_config = {
 }
 
 layouts = [
-    layout.Bsp(**default_layout_config),
-    layout.Columns(**default_layout_config),
-    layout.Max(),
+    layout.Bsp(**default_layout_config, border_on_single=True),
+    layout.Columns(**default_layout_config, border_on_single=True),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
+    layout.Stack(**default_layout_config, num_stacks=2),
     # layout.Matrix(),
     layout.MonadTall(**default_layout_config),
     # layout.MonadWide(),

@@ -1,6 +1,6 @@
 #!/bin/sh
 vmware-user & vmware-user-suid-wrapper
-feh --bg-scale ~/Pictures/black5_unicat.png
+feh --bg-scale ~/Pictures/romb.png
 picom & disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
 
 # Low battery notifier

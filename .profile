@@ -2,6 +2,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
 export SHELL=fish
+export BROWSER=google-chrome-stable
 . "$HOME/.cargo/env"
 
 
